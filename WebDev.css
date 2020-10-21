@@ -1,15 +1,33 @@
-.header {
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "Header Header Header"
+    "Navbar Navbar Navbar"
+    "Column1 Column2 Column3"
+    "Column1 Column2 Column3";
+}
+.Header { grid-area: Header; }
+.Navbar { grid-area: Navbar; }
+.Column1 { grid-area: Column1; }
+.Column2 { grid-area: Column2; }
+.Column3 { grid-area: Column3; }
+
+.Header {
     background-color: #f1f1f1;
     text-align: center;
     padding: 40px;
 }
 
-.topnav {
+.Navbar {
     overflow: hidden;
     background-color: #333;
+    height: 50px;
 }
 
-.topnav a{
+.Navbar a{
     float: left;
     display: block;
     color: #f2f2f2;
@@ -17,28 +35,19 @@
     padding: 14px 16px;
 }
 
-.topnav a:hover {
+.Navbar a:hover {
     background-color: #ddd;
     color:black;
+    height: 50px;
 }
 
-/* Create three unequal columns that floats next to each other */
-.column {
-    float: left;
-    width: 33.33%;
-    padding: 15px;
-  }
-  
-  /* Clear floats after the columns */
-  .row:after {
-    content: "";
-    display: table;
-    clear: both;
-  }
-  
-  /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
-  @media screen and (max-width:600px) {
-    .column {
-      width: 100%;
-    }
-  }
+.Column1 {
+  padding-left: 40px;
+}
+
+.Column2 {
+  padding-left: 40px;
+}
+.Column3 {
+  padding-left: 40px;
+}

@@ -23,11 +23,10 @@
 
 .Header {
     text-align: center;
-    padding: 30px;
+    padding: 50px;
     height: 40px;
     font-family: Arial;
     font-size: 24px;
-    
 }
 
 .Navbar {
@@ -70,7 +69,6 @@ table, tr, td {
     text-align: center;
     font-size: 23px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    
 }
 
 .table { grid-area: table; 
@@ -85,3 +83,103 @@ div.grad {
   height: 969px;
 }
 
+.grid-container1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "Picture1 Header1 Header1 Header1 Header1 Transformation3D Transformation3D"
+    "Navbar1 Navbar1 Navbar1 Navbar1 Navbar1 Transformation3D Transformation3D"
+    "Transform2D Transform2D Scale Scale Rotate Rotate ."
+    "Transform2D Transform2D Scale Scale Rotate Rotate .";
+}
+.Navbar1 { grid-area: Navbar1; }
+.Header1 { grid-area: Header1; }
+.Picture1 { grid-area: Picture1; }
+.Transform2D { grid-area: Transform2D; }
+.Scale { grid-area: Scale; }
+.Rotate { grid-area: Rotate; }
+.Transformation3D { grid-area: Transformation3D; }
+
+.Navbar1 {
+  overflow: hidden;
+  background-color: #333;
+  height: 50px;
+  width: 349px;
+}
+
+.Navbar1 a{
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  font-family: Arial;
+  font-size: 14px;
+  padding: 14px 16px;
+}
+
+.Navbar1 a:hover {
+  background-color: #ddd;
+  color:black;
+  height: 50px;
+}
+.Header1 {
+  text-align: center;
+  padding: 50px;
+  padding-left: 50px;
+  height: 40px;
+  font-family: Arial;
+  font-size: 24px;
+}
+.Picture1 {
+  padding: 10px;
+}
+
+.Logo {
+  padding: 10px;
+  float: left;
+  display: block;
+}
+
+.Transform2D {
+  padding-left: 20px;
+  width: 300px;
+  height: 100px;
+  background-color: darkgoldenrod;
+  border: 1px solid black;
+  transform: translate(50px, 100px);
+}
+
+.Scale {
+  padding-left: 20px;
+  width: 300px;
+  height: 100px;
+  background-color: darkgoldenrod;
+  border: 1px solid black;
+  transform: scale(2,3);
+}
+
+.Rotate {
+  width: 300px;
+  height: 100px;
+  background-color: darkgoldenrod;
+  border: 1px solid black;
+  transform: rotate(35deg);
+}
+
+.Transformation3D {
+  width: 300px;
+  height: 100px;
+  background-color: darkgoldenrod;
+  border: 1px solid black;
+  transform: rotateY(150deg);
+}
+
+.Transformation3D {
+  width: 300px;
+  height: 100px;
+  background-color: darkgoldenrod;
+  border: 1px solid black;
+  transform: rotateX(150deg);
+}

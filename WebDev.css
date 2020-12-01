@@ -1,3 +1,7 @@
+:root {
+  --main-bg-color: grey;
+}
+
 * {
 	padding: 0;
 	margin: 0;
@@ -21,6 +25,11 @@
 .Column2 { grid-area: Column2; }
 .Column3 { grid-area: Column3; }
 
+div.background {
+  background-color: var(--main-bg-color);
+  height: 970px;
+}
+
 .Header {
     text-align: center;
     padding: 50px;
@@ -33,7 +42,7 @@
     overflow: hidden;
     background-color: #333;
     height: 50px;
-    width: 349px;
+    width: 1903px;
 }
 
 .Navbar a{
@@ -78,11 +87,6 @@ table, tr, td {
   border-collapse: collapse;
 }
 
-div.grad {
-  background: linear-gradient(grey, lightgrey);
-  height: 969px;
-}
-
 .grid-container1 {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -106,13 +110,13 @@ div.grad {
   overflow: hidden;
   background-color: #333;
   height: 50px;
-  width: 349px;
+  width: 1920px;
 }
 
 .Navbar1 a{
   float: left;
   display: block;
-  color: #f2f2f2;
+  color:var(--white);
   text-align: center;
   font-family: Arial;
   font-size: 14px;
@@ -121,7 +125,7 @@ div.grad {
 
 .Navbar1 a:hover {
   background-color: #ddd;
-  color:black;
+  color: black;
   height: 50px;
 }
 .Header1 {
@@ -171,15 +175,25 @@ div.grad {
 .Transformation3D {
   width: 300px;
   height: 100px;
+  
   background-color: darkgoldenrod;
   border: 1px solid black;
-  transform: rotateY(150deg);
+  position: relative;
+  animation-name: example;
+  animation-duration: 4s;
+  animation-delay: 2s;
 }
 
-.Transformation3D {
-  width: 300px;
-  height: 100px;
-  background-color: darkgoldenrod;
-  border: 1px solid black;
-  transform: rotateX(150deg);
+@keyframes example {
+  0%   {background-color:darkgoldenrod; left:0px; top:0px;}
+  25%  {background-color:darkcyan; left:200px; top:0px;}
+  50%  {background-color:darkblue; left:200px; top:200px;}
+  75%  {background-color:darkgreen; left:0px; top:200px;}
+  100% {background-color:darkred; left:0px; top:0px;}
+}
+
+.Transformation3D:hover {
+  width: 200px;
+  height: 200px;
+  transition: width 2s, height 4s
 }

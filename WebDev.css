@@ -1,3 +1,6 @@
+:root {
+  --main-bg-color: grey;
+}
 * {
 	padding: 0;
 	margin: 0;
@@ -6,14 +9,15 @@
 
 .grid-container {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 33.3% 33.3% 33.3%;
+  grid-template-rows: 100px 100px 28.4% 1fr;
   gap: 0px 0px;
   grid-template-areas:
     "Header Header Header"
     "Navbar Navbar Navbar"
     "Column1 Column2 Column3"
     "Column1 Column2 Column3";
+
 }
 .Header { grid-area: Header; }
 .Navbar { grid-area: Navbar; }
@@ -23,7 +27,7 @@
 
 .Header {
     text-align: center;
-    padding: 50px;
+    padding: 20px;
     height: 40px;
     font-family: Arial;
     font-size: 24px;
@@ -33,7 +37,7 @@
     overflow: hidden;
     background-color: #333;
     height: 50px;
-    width: 349px;
+    width: auto;
 }
 
 .Navbar a{
@@ -72,15 +76,17 @@ table, tr, td {
 }
 
 .table { grid-area: table; 
-  width: 450px;
+  width: 100%;
   padding-top: 200px;
   padding-right: 30px;
   border-collapse: collapse;
 }
 
-div.grad {
-  background: linear-gradient(grey, lightgrey);
-  height: 969px;
+div.background {
+  width:100%;
+  height:100%;
+  background-color: var(--main-bg-color);
+
 }
 
 .grid-container1 {
@@ -105,8 +111,8 @@ div.grad {
 .Navbar1 {
   overflow: hidden;
   background-color: #333;
-  height: 50px;
-  width: 349px;
+  height: 39%;
+  width: auto;
 }
 
 .Navbar1 a{
@@ -122,13 +128,13 @@ div.grad {
 .Navbar1 a:hover {
   background-color: #ddd;
   color:black;
-  height: 50px;
+  height: 100%;
 }
 .Header1 {
   text-align: center;
   padding: 50px;
   padding-left: 50px;
-  height: 40px;
+  height: 40%;
   font-family: Arial;
   font-size: 24px;
 }
@@ -144,8 +150,8 @@ div.grad {
 
 .Transform2D {
   padding-left: 20px;
-  width: 300px;
-  height: 100px;
+  width: 50%;
+  height: 50%;
   background-color: darkgoldenrod;
   border: 1px solid black;
   transform: translate(50px, 100px);
@@ -153,33 +159,100 @@ div.grad {
 
 .Scale {
   padding-left: 20px;
-  width: 300px;
-  height: 100px;
+  width: 50%;
+  height: 50%;
   background-color: darkgoldenrod;
   border: 1px solid black;
   transform: scale(2,3);
 }
 
 .Rotate {
-  width: 300px;
-  height: 100px;
+  width: 100%;
+  height: 50%;
   background-color: darkgoldenrod;
   border: 1px solid black;
   transform: rotate(35deg);
 }
 
 .Transformation3D {
-  width: 300px;
-  height: 100px;
+  width: 50%;
+  height: 50%;
+  
   background-color: darkgoldenrod;
   border: 1px solid black;
-  transform: rotateY(150deg);
+  position: relative;
+  animation-name: example;
+  animation-duration: 4s;
+  animation-delay: 2s;
 }
 
-.Transformation3D {
-  width: 300px;
-  height: 100px;
-  background-color: darkgoldenrod;
-  border: 1px solid black;
-  transform: rotateX(150deg);
+@keyframes example {
+  0%   {background-color:darkgoldenrod; left:0px; top:0px;}
+  25%  {background-color:darkcyan; left:200px; top:0px;}
+  50%  {background-color:darkblue; left:200px; top:200px;}
+  75%  {background-color:darkgreen; left:0px; top:200px;}
+  100% {background-color:darkred; left:0px; top:0px;}
+}
+
+.Transformation3D:hover {
+  width: 200px;
+  height: 200px;
+  transition: width 2s, height 4s
+}
+
+.grid-container2 {
+  display: grid;
+  grid-template-columns: 16.66% 16.66% 16.66% 16.66% 16.66% 16.66%;
+  grid-template-rows: 200px 100px 28.4% 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    "Header2 Header2 Header2 Header2 Header2 Header2"
+    "Navbar Navbar Navbar Navbar Navbar Navbar"
+    "Information Information Information Information Information Information"
+    "CodeSnippet CodeSnippet CodeSnippet1 CodeSnippet1 CodeSnippet2 CodeSnippet2"
+    "CodeSnippet CodeSnippet CodeSnippet1 CodeSnippet1 CodeSnippet2 CodeSnippet2";
+}
+
+.Header2 { grid-area: Header2; }
+
+.Navbar2 { grid-area: Navbar; }
+
+.Information { grid-area: Information; }
+
+.CodeSnippet { grid-area: CodeSnippet; }
+
+.CodeSnippet1 { grid-area: CodeSnippet1; }
+
+.CodeSnippet2 { grid-area: CodeSnippet2; }
+
+.Header2 {
+  text-align: center;
+  padding: 50px;
+  padding-left: 50px;
+  height: 40px;
+  font-family: Arial;
+  font-size: 24px;
+}
+
+.Navbar2 {
+  overflow: hidden;
+  background-color: #333;
+  height: 50px;
+  width: auto;
+}
+
+.Navbar2 a{
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  font-family: Arial;
+  font-size: 14px;
+  padding: 14px 16px;
+}
+
+.Navbar2 a:hover {
+  background-color: #ddd;
+  color:black;
+  height: 50px;
 }
